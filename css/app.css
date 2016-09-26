@@ -3263,17 +3263,24 @@ main section {
   padding: 13rem 0; }
 
 .fn-service-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  height: 35rem;
-  align-items: center; }
+  -webkit-flex-flow: row wrap;
+  justify-content: space-between; }
   .fn-service-list__item {
-    width: 30%;
+    width: 350px;
     border: 1px solid #9E9D9E;
     border-radius: 10px;
-    padding: 2rem 0;
-    transition: all .6s; }
+    padding: 2rem .5rem;
+    transition: all .6s;
+    margin-top: 20px;
+    text-align: center; }
     .fn-service-list__item p {
       color: #9E9D9E; }
       .fn-service-list__item p svg {
@@ -3284,26 +3291,6 @@ main section {
         color: #1DDE85; }
       .fn-service-list__item:hover p {
         color: black; }
-
-.fn-team-member {
-  display: inline-block;
-  position: relative;
-  height: 355px;
-  overflow: hidden; }
-  .fn-team-member-info {
-    position: absolute;
-    bottom: 0;
-    background-color: #454546;
-    width: 100%;
-    height: 3.5rem; }
-  .fn-team-member_name {
-    color: #fff;
-    margin: 0;
-    font-size: 1.125rem; }
-  .fn-team-member_position {
-    color: #fff;
-    font-weight: 100;
-    font-size: 0.875rem; }
 
 .fn-work .fn-work-sort {
   list-style: none;
