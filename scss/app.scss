@@ -41,13 +41,139 @@
 
 
 /* Menu */
-
+.foini {
+	text-transform: uppercase;
+	color:$primary-color;
+	font-weight: 700;
+}
+.row {
+	padding: 0 30px;
+}
 .top-bar {
+	background-color: transparent;
+	border-bottom: 1px solid #fff;
+	text-transform: uppercase;
+	padding: 40px 0 43px;
 	ul {
+		background-color: inherit;
 		li {
-			a {
-
+		}
+		a {
+			color: #FFF;
+			border-bottom:2px solid transparent;
+			border-radius: 4px;
+			transition:all ease-in .3s ;
+			&:hover {
+				border-bottom:1px solid $primary-color;
+				color: $primary-color;
 			}
 		}
+	}
+}
+main section {
+	padding-top: 7.8125rem;
+}
+.fn-title {
+	padding-bottom: 45px;
+}
+.fn-header {
+	background: url('../img/baner.jpg') 50% no-repeat #111;
+	background-size: cover;
+	.fn-title {
+		color:white;
+	}
+	p {
+		max-width: 58.375rem;
+		margin: 0 auto;
+		color:#fff;
+	}
+}
+
+.fn-main {
+	padding: 13rem 0;
+}
+.fn-service {
+
+}
+.fn-service-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	height: 35rem;
+	align-items: center;
+	&__item {
+		width: 30%;
+		border:1px solid $light-gray;
+		border-radius: 10px;
+		padding: 2rem 0;
+		transition: all .6s;
+		p {
+			color: $light-gray;
+			svg {
+				height: 38px;
+			}
+		}
+		&:hover {
+			border:1px solid $primary-color;
+			h3 {
+				color:$primary-color;
+			}
+			p {
+				color:black;
+			}
+		}
+	}
+}
+
+.fn-team-member {
+	display: inline-block;
+	position: relative;
+	height: 355px;
+	overflow: hidden;
+	&-info {
+		position: absolute;
+		bottom: 0;
+		background-color: $secondary-color;
+		width: 100%;
+		height: 3.5rem;
+	}
+	&_name {
+		color:#fff;
+		margin: 0;
+		font-size: 1.125rem;
+	}
+	&_position {
+		color:#fff;
+		font-weight: 100;
+		font-size: 0.875rem
+	}
+}
+
+.fn-work {
+	.fn-work-sort{
+		list-style: none;
+		margin: 0;
+		padding-bottom: 50px;
+		li {
+			display: inline-block;
+			padding-right: 40px;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+		a {
+			color:$secondary-color;
+			&:hover {
+				color:$primary-color;
+				border-bottom:1px solid $primary-color;
+			}
+		}
+	}
+	img {
+		width: 290px;
+		padding-bottom: 20px;
+	}
+	.button {
+		padding:20px 60px ;
 	}
 }
