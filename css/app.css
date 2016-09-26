@@ -3262,18 +3262,29 @@ main section {
 .fn-main {
   padding: 13rem 0; }
 
+.fn-service {
+  padding: 40px 0; }
+
 .fn-service-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  height: 35rem;
-  align-items: center; }
+  -webkit-flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
   .fn-service-list__item {
-    width: 30%;
+    width: 330px;
     border: 1px solid #9E9D9E;
     border-radius: 10px;
-    padding: 2rem 0;
-    transition: all .6s; }
+    padding: 2rem .5rem;
+    transition: all .6s;
+    margin-bottom: 20px;
+    text-align: center; }
     .fn-service-list__item p {
       color: #9E9D9E; }
       .fn-service-list__item p svg {
@@ -3285,44 +3296,93 @@ main section {
       .fn-service-list__item:hover p {
         color: black; }
 
-.fn-team-member {
-  display: inline-block;
-  position: relative;
-  height: 355px;
-  overflow: hidden; }
-  .fn-team-member-info {
-    position: absolute;
-    bottom: 0;
-    background-color: #454546;
-    width: 100%;
-    height: 3.5rem; }
-  .fn-team-member_name {
-    color: #fff;
+.fn-work {
+  padding: 40px 0; }
+  .fn-work .fn-work-sort {
+    list-style: none;
     margin: 0;
-    font-size: 1.125rem; }
-  .fn-team-member_position {
-    color: #fff;
-    font-weight: 100;
-    font-size: 0.875rem; }
+    padding-bottom: 50px; }
+    .fn-work .fn-work-sort li {
+      display: inline-block;
+      margin-right: 40px;
+      color: #454546;
+      border-bottom: 1px solid transparent;
+      -webkit-transition: color, border .5s;
+      -moz-transition: color, border .5s;
+      -ms-transition: color, border .5s;
+      -o-transition: color, border .5s;
+      transition: color, border .5s; }
+      .fn-work .fn-work-sort li:hover {
+        color: #1DDE85;
+        border-bottom: 1px solid #1DDE85;
+        cursor: pointer; }
+    .fn-work .fn-work-sort:last-child {
+      padding-right: 0; }
+  .fn-work-list {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .fn-work-list .mix {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      width: 360px;
+      max-height: 360px;
+      margin-bottom: 40px;
+      -webkit-transition: all .6s;
+      -moz-transition: all .6s;
+      -ms-transition: all .6s;
+      -o-transition: all .6s;
+      transition: all .6s; }
+      .fn-work-list .mix h2 {
+        position: absolute;
+        color: #fff;
+        top: calc(50% - 20px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0; }
+      .fn-work-list .mix:hover {
+        -webkit-filter: contrast(1.8);
+        filter: contrast(1.8);
+        cursor: pointer; }
+        .fn-work-list .mix:hover h2 {
+          opacity: 1; }
+  .fn-work .button {
+    padding: 20px 60px; }
 
-.fn-work .fn-work-sort {
-  list-style: none;
-  margin: 0;
-  padding-bottom: 50px; }
-  .fn-work .fn-work-sort li {
-    display: inline-block;
-    padding-right: 40px; }
-  .fn-work .fn-work-sort:last-child {
-    padding-right: 0; }
-  .fn-work .fn-work-sort a {
-    color: #454546; }
-    .fn-work .fn-work-sort a:hover {
-      color: #1DDE85;
-      border-bottom: 1px solid #1DDE85; }
-
-.fn-work img {
-  width: 290px;
-  padding-bottom: 20px; }
-
-.fn-work .button {
-  padding: 20px 60px; }
+.fn-subscribe {
+  background: url("../img/subscribe.jpg");
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 40px 0; }
+  .fn-subscribe .columns {
+    padding: 0; }
+    .fn-subscribe .columns:first-child {
+      padding-right: 11px; }
+    .fn-subscribe .columns:last-child {
+      padding-left: 11px; }
+  .fn-subscribe input[type="text"], .fn-subscribe input[type="email"], .fn-subscribe textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline-offset: none;
+    background-color: transparent;
+    min-height: 50px;
+    padding: 12px; }
+    .fn-subscribe input[type="text"]::-webkit-input-placeholder, .fn-subscribe input[type="email"]::-webkit-input-placeholder, .fn-subscribe textarea::-webkit-input-placeholder {
+      color: #fff;
+      font-style: italic; }
+  .fn-subscribe textarea {
+    height: 215px; }
+  .fn-subscribe h2 {
+    color: #fff; }
+  .fn-subscribe button {
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 37px;
+    margin-top: 20px; }
