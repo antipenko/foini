@@ -177,3 +177,12 @@ main section {
 		padding:20px 60px ;
 	}
 }
+.fn-meet {
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	&-member {
+		
+	}
+}
