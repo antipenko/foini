@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Foundation for Sites</title>
 	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="icon" href="favicon.png">
 	<link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css'>
@@ -37,7 +38,7 @@
 				</div>
 			</div>
 			<div class="fn-main text-center">
-				<h2 class="fn-title">We Love <span class="foini">FOINNI</span> Polapain</h2>
+				<h2 class="fn-title">We Love <span class="foini">ADVIN</span> Polapain</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, magni, tempore. Iure doloremque nemo saepe quod sapiente tempor esaepe quod sapiente tempore </p>
 			</div>
 		</div>
@@ -187,28 +188,106 @@
 							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
 
-			<section class="fn-work text-center">
-				<h2 class="fn-title">Our Latest Work </h2>
-				<ul class="fn-work-sort">
-					<li> <a href="#">All</a></li>
-					<li> <a href="#">Designer</a></li>
-					<li> <a href="#">Manipulation</a></li>
-					<li> <a href="#">Photographer</a></li>
-					<li> <a href="#">Development</a></li>
-				</ul>
-				<div class="fn-work-list">
-				</div>
-				<button class="button success">See more</button>
-			</section>
+							<section class="fn-work text-center">
+								<h2 class="fn-title">Our Latest Work </h2>
+								<ul class="fn-work-sort">
+									<li class="filter" data-filter="all""> All</li>
+									<li class="filter" data-filter="Designer""> Designer</li>
+									<li class="filter" data-filter="manipulation""> Manipulation</li>
+									<li class="filter" data-filter="all""> Photographer</li>
+									<li class="filter" data-filter="all""> Development</li>
+								</ul>
 
-		</div>
-	</div>
-</main>
+								<div class="fn-work-list" id="Container">
+									<div class="mix designer">
+										<img src="img/work1.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+									<div class="mix designer">
+										<img src="img/work2.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+									<div class="mix designer">
+										<img src="img/work3.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+									<div class="mix manipulation" >
+										<img src="img/work4.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+									<div class="mix manipulation">
+										<img src="img/work5.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+									<div class="mix manipulation designer" >
+										<img src="img/work6.jpg" alt="">
+										<h2>Something Name</h2>
+									</div>
+								</div>
+								<button class="button">See more</button>
+							</section>
 
-<script src="https://use.fontawesome.com/3cfd273d41.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/what-input.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/app.js"></script>
-</body>
-</html>
+						</div>
+					</div>
+
+					<section class="fn-subscribe">
+						<div class="row">
+						<h2 class="text-center fn-title">Say Hi!</h2>
+							<form class="text-center">
+									<div class="medium-6 columns">
+											<input type="text" required placeholder="Your name" />
+									</div>
+									<div class="medium-6 columns error">
+											<input type="email" required placeholder="Your email"/>
+									</div>
+								<textarea class="error" placeholder="Message..."></textarea>
+								<button type="submit" class="button ">Send Message</button>
+							</form>
+						</div>
+					</section>
+					<section class="fn-widget">
+						<div class="row">
+							<div class="columns medium-4">
+								<h3>About Us</h3>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia nemo dolores voluptatem fugit magnam ipsa doloremque quibusdam natus officiis nihil eaque commodi beatae distinctio est, consequuntur itaque eveniet laboriosam blanditiis.
+								</p>
+							</div>
+							<div class="columns medium-4">
+								<h3>Quick Link</h3>
+								<ul>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Services</a></li>
+									<li><a href="#">Portfolio</a></li>
+									<li><a href="#">Pricing</a></li>
+									<li><a href="#">Contact us</a></li>
+								</ul>
+							</div>
+							<div class="fn-widget-subscribe columns medium-4">
+								<h3>Find Us On</h3>
+								<p class="fn-socials">
+									<a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+									<a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+									<a href="https://https://google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+									<a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+								</p>
+								<h3>Subscribe Our Newsletter</h3>
+								<input type="email" placeholder="Your Email">
+								<button class="button">Subscribe</button>
+							</div>
+						</div>
+					</section>
+				</main>
+				<footer class="fn-footer text-center">
+					A Design by Mr. <a target="_blank" href="https://vk.com/fire36">Antipka</a>
+				</footer>
+
+				<script src="https://use.fontawesome.com/3cfd273d41.js"></script>
+				<script src="js/jquery.min.js"></script>
+				<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+				<script src="js/what-input.min.js"></script>
+				<script src="js/foundation.min.js"></script>
+				<script src="js/app.js"></script>
+			</body>
+			</html>
+
