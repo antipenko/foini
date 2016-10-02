@@ -3478,6 +3478,8 @@ section {
   .fn-service-list__item {
     max-width: 240px;
     padding: 0.5rem; }
+  .fn-work .fn-work-sort li {
+    margin-right: 20px; }
   .fn-work-list .mix {
     max-height: 240px;
     max-width: 250px;
