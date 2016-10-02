@@ -3331,7 +3331,8 @@ section {
       display: inline-block;
       margin: 0;
       width: 360px;
-      max-height: 360px;
+      height: 350px;
+      overflow: hidden;
       margin-bottom: 40px;
       -webkit-transition: all .6s;
       -moz-transition: all .6s;
@@ -3362,12 +3363,6 @@ section {
   -o-background-size: cover;
   background-size: cover;
   padding: 40px 0; }
-  .fn-subscribe .columns {
-    padding: 0; }
-    .fn-subscribe .columns:first-child {
-      padding-right: 11px; }
-    .fn-subscribe .columns:last-child {
-      padding-left: 11px; }
   .fn-subscribe input[type="text"], .fn-subscribe input[type="email"], .fn-subscribe textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -3389,6 +3384,12 @@ section {
     line-height: 50px;
     padding: 0 37px;
     margin-top: 20px; }
+
+.form-name {
+  padding: 0 11px 0 0; }
+
+.form-email {
+  padding: 0; }
 
 .fn-widget {
   background-color: #0b0a0a;
@@ -3454,3 +3455,32 @@ section {
   background-color: #000;
   line-height: 72px;
   color: #fff; }
+
+@media (max-width: 50rem) {
+  .fn-header {
+    height: 100vh; }
+    .fn-header .fn-main {
+      padding: 6rem 0; }
+  .fn-service-list {
+    padding: 0 5px;
+    -webkit-justify-content: space-around;
+    justify-content: space-around; }
+  .fn-work-list {
+    -webkit-justify-content: space-around;
+    justify-content: space-around; }
+    .fn-work-list .mix {
+      max-height: 340px;
+      max-width: 350px; }
+  textarea {
+    resize: none; } }
+
+@media (max-width: 37.5rem) {
+  .fn-service-list__item {
+    max-width: 240px;
+    padding: 0.5rem; }
+  .fn-work-list .mix {
+    max-height: 240px;
+    max-width: 250px;
+    margin-bottom: 10px; }
+  .form-name {
+    padding: 0; } }
