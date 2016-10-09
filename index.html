@@ -14,8 +14,20 @@
 <body>
 	<header class="fn-header">
 		<div class="row">
-			<div class="top-bar">
-				<div class="top-bar-title">
+			<div class="header-contact clearfix">
+				<p class="fn-phone float-left">
+					<a class="fn-phone__link" href="tel:+380507676722">+38(050)7676722</a>
+					<a class="fn-phone__link" href="tel:+380507676722">+38(050)7676722</a>
+				</p>
+				<p class="fn-socials float-right">
+					<a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="https://https://google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					<a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				</p>
+			</div>
+			<div class="top-bar clearfix">
+				<div class="top-bar-title float-left">
 					<a href="#" class="ba-logo"><img src="img/logo.png"></a>
 
 					<span class="float-right hide-for-medium" data-responsive-toggle="responsive-menu" data-hide-for="medium">
@@ -23,16 +35,16 @@
 					</span>
 				</div>
 
-				<div id="responsive-menu">
+				<div id="responsive-menu" class="float-right">
 					<div class="top-bar-right">
-						<ul class="vertical medium-horizontal menu">
-							<li>
-								<a href="#">HOME</a>
+						<ul class="vertical medium-horizontal menu" id="menu">
+							<li class="menu__item">
+								<a class="menu__link" href="#">HOME</a>
 							</li>
-							<li><a href="#">service</a></li>
-							<li><a href="#">pricing</a></li>
-							<li><a href="#">portfolio</a></li>
-							<li><a href="#">contact us</a></li>
+							<li class="menu__item"><a class="menu__link"href="#service">service</a></li>
+							<!-- <li><a href="#price">pricing</a></li> -->
+							<li class="menu__item"><a class="menu__link"href="#portfolio">portfolio</a></li>
+							<li class="menu__item"><a class="menu__link"href="#contact">contact us</a></li>
 						</ul>
 					</div>
 				</div>
@@ -50,7 +62,7 @@
 			<!-- 
 				Start section service. Section have Header + text and 
 				list of services. List is flex-box contaoner		-->
-				<section class="fn-service text-center">
+				<section class="fn-service text-center" id="service">
 						<h2 class="fn-title">Welcome To <span class="foini">Foinni</span></h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
 						<div class="fn-service-list">
@@ -175,7 +187,7 @@
 			<!-- 
 				Start section works. Section have Header + container with parametrs filter 
 				and list of works, which have setting filter		-->
-				<section class="fn-work text-center">
+				<section class="fn-work text-center" id="portfolio">
 					<h2 class="fn-title">Our Latest Work </h2>
 					<ul class="fn-work-sort">
 						<li class="filter"  data-filter="all""> All</li>
@@ -217,7 +229,7 @@
 			</div>
 	</div>
 
-	<section class="fn-subscribe">
+	<section class="fn-subscribe" id="contact">
 		<div class="row">
 			<h2 class="text-center fn-title">Say Hi!</h2>
 			<form class="text-center">
@@ -255,7 +267,7 @@
 				<p class="fn-socials">
 					<a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="https://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="https://https://google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					<a href="https://google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
 					<a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 				</p>
 				<h3>Subscribe Our Newsletter</h3>
@@ -271,7 +283,16 @@
 
 <script src="https://use.fontawesome.com/3cfd273d41.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+});
+</script>
 <script src="js/what-input.min.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/app.js"></script>

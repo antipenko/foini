@@ -37,7 +37,7 @@
 @include foundation-thumbnail;
 @include foundation-title-bar;
 @include foundation-tooltip;
-@include foundation-top-bar;
+//@include foundation-top-bar;
 
 body {
 	background: linear-gradient(90deg, #f5f5f5 0%, #ffffff 92%);
@@ -61,25 +61,26 @@ ul {
 	border-bottom: 1px solid #fff;
 	text-transform: uppercase;
 	padding: 40px 0 43px;
-	ul {
-		background-color: inherit;
-		li {
-		}
-		a {
-			color: #FFF;
-			border-bottom:2px solid transparent;
-			border-radius: 4px;
-			transition:all ease-in .3s ;
-			&:hover {
-				border-bottom:1px solid $primary-color;
-				color: $primary-color;
-			}
+}
+.menu{
+	background-color: inherit;
+	&__link{
+		color: #FFF;
+		border-bottom:2px solid transparent;
+		border-radius: 4px;
+		transition:all ease-in .3s ;
+		&:hover, &:focus {
+			border-bottom:1px solid $primary-color;
+			color: $primary-color;
+			outline: none;
 		}
 	}
 }
 section {
 	padding-top: 40px;
 }
+.fn
+
 .fn-title {
 	padding-bottom: 45px;
 }
@@ -95,7 +96,12 @@ section {
 		color:#fff;
 	}
 }
-
+.fn-phone {
+	&__link {
+		display: block;
+		color: #FFF;
+	}
+}
 .fn-main {
 	padding: 13rem 0;
 }
@@ -271,8 +277,6 @@ section {
 		}
 	}
 }
-.fn-widget-subscribe {
-	
 	.fn-socials {
 		a {
 			display: inline-block;
@@ -288,13 +292,15 @@ section {
 			-ms-transition: color, background ease-in 0.6s;
 			-o-transition: color, background ease-in 0.6s;
 			transition: color, background ease-in 0.6s;
-			&:hover {
+			&:hover, &:focus {
 				background-color: #FFF;
 				color:#000;
 				border-color: #FFF;
 			}
 		}
 	}
+.fn-widget-subscribe {
+	
 	input[type="email"] {
 		-webkit-appearance: none;
 		-moz-appearance: none;
