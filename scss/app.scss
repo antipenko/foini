@@ -37,7 +37,7 @@
 @include foundation-thumbnail;
 @include foundation-title-bar;
 @include foundation-tooltip;
-//@include foundation-top-bar;
+// @include foundation-top-bar;
 
 body {
 	background: linear-gradient(90deg, #f5f5f5 0%, #ffffff 92%);
@@ -60,7 +60,7 @@ ul {
 	background-color: transparent;
 	border-bottom: 1px solid #fff;
 	text-transform: uppercase;
-	padding: 40px 0 43px;
+	padding: 20px 0 30px;
 }
 .menu{
 	background-color: inherit;
@@ -278,7 +278,7 @@ section {
 	}
 }
 	.fn-socials {
-		a {
+		&__link {
 			display: inline-block;
 			text-align: center;
 			border:2px solid #8f8e91;
@@ -333,9 +333,9 @@ section {
 @media (max-width: 50rem) {
 	.fn-header{
 		height: 100vh;
-		.fn-main {
-			padding: 6rem 0;
-		}
+	}
+	.fn-main {
+		padding: 6rem 0;
 	}
 	.fn-service-list {
 		padding: 0 5px;
@@ -384,4 +384,25 @@ section {
 		padding: 0;
 	}
 
+}
+@media (max-width:25.75rem){
+	.fn-main {
+			padding: 3rem 0;
+		}
+	.top-bar-title {
+		width: 100%;
+	}
+	.fn-phone__link {
+		font-size: 0.875rem;
+	}
+	.fn-socials__link {
+	    font-size: 20px;
+	    line-height: 30px;
+	    width: 30px;
+	    height: 30px;
+	    margin-right: 1px;
+	    &:last-child {
+	    	margin: 0;
+	    }
+	}
 }
