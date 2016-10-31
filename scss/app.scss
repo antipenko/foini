@@ -72,6 +72,9 @@ ul {
 			border-bottom:2px solid transparent;
 			border-radius: 4px;
 			transition:all ease-in .3s ;
+			&_grey {
+				color: #8f8e91;
+			}
 			&:hover, &:focus {
 				border-bottom:1px solid $primary-color;
 				color: $primary-color;
@@ -190,11 +193,12 @@ ul {
 			-webkit-flex-wrap: wrap;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
-
+			-webkit-justify-content: space-around;
+			        justify-content: space-around;
 			.mix {
-				position: relative;
-				display: inline-block;
-				margin: 0;
+				position: relative; 
+				display: inline-block; 
+				margin: 0; 
 				width: 360px;
 				height: 350px;
 				overflow: hidden;
@@ -281,7 +285,7 @@ ul {
 			font-size: 18px;
 		}
 		a {
-			color:  #8f8e91;	
+				
 			line-height: 30px;
 			-webkit-transition: color 0.5s;
 			-moz-transition: color 0.5s;
