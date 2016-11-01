@@ -3167,6 +3167,10 @@ ul {
   list-style-type: none;
   margin: 0; }
 
+input[type='text'], input[type='email'], textarea {
+  color: #FFF;
+  font-style: italic; }
+
 /* Menu */
 .foini {
   text-transform: uppercase;

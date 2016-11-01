@@ -21,3 +21,12 @@ document.getElementById('designer').addEventListener('click', function(){
 	works.hidden;
 	console.log(design);
 });
+
+var $work = $('.mix');
+	console.log($work);
+	$work.onclick();
+
+$work.on('click', function(){
+	console.log(this);
+
+});
