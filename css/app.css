@@ -3208,7 +3208,8 @@ input[type='text'], input[type='email'], textarea {
 
 .menu_vertical .menu__link {
   border: none;
-  padding-left: 0; }
+  padding-left: 0;
+  display: inline-block; }
   .menu_vertical .menu__link:hover, .menu_vertical .menu__link .menu__link:focus {
     color: #fff;
     border: none; }
