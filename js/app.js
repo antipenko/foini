@@ -15,18 +15,30 @@ $(document).foundation();
 //     });
 // });
 
-document.getElementById('designer').addEventListener('click', function(){
-	var design = document.getElementsByClassName('designer');
-	var works = document.getElementsByClassName('mix');
-	works.hidden;
-	console.log(design);
+var $design 	= $('#designer'),
+	$poligraphs = $('#poligraphs'),
+	$sites		= $('#sites'),
+	$work 	= $(".mix");
+
+$design.on('click', function(){
+	// var design = $('.designer');
+	$work.hide()
+  		.filter( ".designer" )
+    	.css( "display", "inline-block" );
 });
 
-var $work = $('.mix');
-	console.log($work);
-	$work.onclick();
-
-$work.on('click', function(){
-	console.log(this);
-
+$poligraphs.on('click', function(){
+	// var poligraphs = $('.poligraphs');
+	$work.css( "display", "none" )
+  		.filter( ".poligraphs" )
+    	.css( "display", "inline-block" );
 });
+
+$sites.on('click', function(){
+	// var design = $('.designer');
+	$work.css( "display", "none" )
+  		.filter( ".sites" )
+    	.css( "display", "inline-block" );
+});
+
+
