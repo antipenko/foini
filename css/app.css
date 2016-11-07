@@ -3270,11 +3270,11 @@ section {
 
 .fn-work {
   padding: 40px 0; }
-  .fn-work .fn-work-sort {
+  .fn-work-sort {
     list-style: none;
     margin: 0;
     padding-bottom: 50px; }
-    .fn-work .fn-work-sort li {
+    .fn-work-sort__item {
       display: inline-block;
       margin-right: 40px;
       color: #454546;
@@ -3284,11 +3284,11 @@ section {
       -ms-transition: color, border .5s;
       -o-transition: color, border .5s;
       transition: color, border .5s; }
-      .fn-work .fn-work-sort li:hover {
+      .fn-work-sort__item_current, .fn-work-sort__item:hover {
         color: #1DDE85;
         border-bottom: 1px solid #1DDE85;
         cursor: pointer; }
-    .fn-work .fn-work-sort:last-child {
+    .fn-work-sort:last-child {
       padding-right: 0; }
   .fn-work-list {
     display: flex;

@@ -170,11 +170,11 @@ input[type='text'], input[type='email'], textarea {
 
 	.fn-work {
 		padding: 40px 0;
-		.fn-work-sort{
+		&-sort{
 			list-style: none;
 			margin: 0;
 			padding-bottom: 50px;
-			li {
+			&__item{
 				display: inline-block;
 				margin-right: 40px;
 				color:$secondary-color;
@@ -184,7 +184,7 @@ input[type='text'], input[type='email'], textarea {
 				-ms-transition: color, border .5s;
 				-o-transition: color, border .5s;
 				transition: color, border .5s;
-				&:hover {
+				&_current, &:hover {
 					color:$primary-color;
 					border-bottom:1px solid $primary-color;
 					cursor:pointer;
