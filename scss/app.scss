@@ -429,3 +429,18 @@ input[type='text'], input[type='email'], textarea {
 			}
 		}
 	}
+
+	.modal{
+		position: fixed;
+    z-index: 5555;
+    height: 50%;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: red;
+    right: 0;
+	}
+
+

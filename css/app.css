@@ -2756,7 +2756,7 @@ body.is-reveal-open {
   border: 1px solid #cacaca;
   margin: 6.25rem auto 0;
   background-color: #fefefe;
-  border-radius: 0;
+  border-radius: 20px;
   position: absolute;
   overflow-y: auto; }
   [data-whatinput='mouse'] .reveal {
@@ -2771,7 +2771,7 @@ body.is-reveal-open {
     margin-bottom: 0; }
   @media screen and (min-width: 40em) {
     .reveal {
-      width: 600px;
+      width: 700px;
       max-width: 73.125rem; } }
   @media screen and (min-width: 40em) {
     .reveal .reveal {
@@ -3479,3 +3479,15 @@ section {
     margin-right: 1px; }
     .fn-socials__link:last-child {
       margin: 0; } }
+
+.modal {
+  position: fixed;
+  z-index: 5555;
+  height: 50%;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: red;
+  right: 0; }
