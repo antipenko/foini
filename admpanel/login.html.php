@@ -27,7 +27,7 @@
                 <<script>
                     location.href='http://foini/admpanel/';
                 </script>
-               <?php $_SESSION['logged_user'] = $user->name; ?>
+               <?php $_SESSION['logged_user'] = $user; ?>
             <?php else :
                 $errors[] = 'Пароль не верный';
             endif;

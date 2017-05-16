@@ -12,8 +12,9 @@ require '../includes/db.php';
 
 if (isset($_SESSION['logged_user'])): ?>
     <?php print_r($_SESSION['logged_user']);?> !
-    <?php $userName = $_SESSION['logged_user']->name; ?>
+    <?php $userName = $_SESSION['logged_user']; ?>
     <?php include 'index.html.php'?>
+    <?php echo $userName . ' hi!'; ?>
 <?php else : ?>
 
     <script>
