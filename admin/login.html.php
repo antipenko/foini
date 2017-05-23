@@ -20,12 +20,14 @@
         $login = $_POST["login"];
         $pass = $_POST["password"];
 
-        $user = $pdo->query("SELECT * FROM `users` WHERE login = '$login' && password = '$pass'");
-        $num_rows = $user->fetchColumn();
-        if ($num_rows > 0) {
+        $column = $pdo->query("SELECT users.name FROM users WHERE login='".$login ."' AND password='" . $pass."'");
+        $user = $column->fetchColumn();
+        echo $user;
+        if ($column > 0) {
             print "success=1";
-            $_SESSION['logged_user'] = $user->id;
-            echo '<div style="color:red;">вы авторизованы<a href=".">сюда</a></div>';
+            $_SESSION['logged_user'] = $user;
+            $userName= $_SESSION['logged_user'];
+            echo "<div style='color:red;'>вы авторизованы $user <a href='.'>сюда</a></div>";
         } else {
             print "success=0";
         }

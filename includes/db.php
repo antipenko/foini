@@ -15,4 +15,4 @@ $charset = 'utf8';
 
 R::setup( 'mysql:host=localhost;dbname=foini',
     'mysql', 'mysql');
-
+session_start(); ?>

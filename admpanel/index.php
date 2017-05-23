@@ -1,4 +1,6 @@
-<?php include 'header.html.php';
+<?php
+require '../includes/db.php';
+include 'header.html.php';
 /**
  * Created by PhpStorm.
  * User: vlad
@@ -8,13 +10,12 @@
 ?>
 
 <?php
-require '../includes/db.php';
+
 
 if (isset($_SESSION['logged_user'])): ?>
-    <?php print_r($_SESSION['logged_user']);?> !
-    <?php $userName = $_SESSION['logged_user']; ?>
-    <?php include 'index.html.php'?>
-    <?php echo $userName . ' hi!'; ?>
+    <?php $userName = $_SESSION['logged_user']->name; ?>
+    <?php //echo $_SESSION['logged_user']->name; ?>
+    <?php include 'index.html.php' ;?>
 <?php else : ?>
 
     <script>

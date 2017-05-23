@@ -18,26 +18,26 @@
     if (isset($data['do_login']))
     {
         $errors = array();
-        $user = R::findOne('users', 'login = ?',
-            array($data['login']));
-        if($user)
+        $user = R::findOne( 'users', ' login = ? ', array($data['login']) );
+        if ($user)
         {
-            // if login exist
-            if($data['password'] === $user->password) : ?>
-                <<script>
-                    location.href='http://foini/admpanel/';
-                </script>
-               <?php $_SESSION['logged_user'] = $user; ?>
-            <?php else :
-                $errors[] = 'Пароль не верный';
-            endif;
+            if ( $data['password'] == $user->password)
+            {
+                $_SESSION['logged_user'] = $user;
+                $userName= $_SESSION['logged_user']->login;
+                echo "<div> Вы усешно авторизованы</div>";
+            } else
+            {
+                $errors[] = 'Не верный пароль';
+            }
         } else
         {
-            $errors[] = 'Пользователь не найден!';
+            $errors[] = 'Пользователь не существует';
         }
-        if (!empty($errors))
+
+        if  (!empty ($errors))
         {
-            echo '<div style="color:red">'.array_shift($errors).'</div><hr>';
+            echo "<div>". array_shift($errors) . "</div>";
         }
     }
 ?>
