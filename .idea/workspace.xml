@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d18ec6d5-e70d-41aa-a460-1ef29dd4e795" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/footer.html.php" afterPath="$PROJECT_DIR$/admin/footer.html.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.html.php" afterPath="$PROJECT_DIR$/admin/index.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/app.scss" afterPath="$PROJECT_DIR$/scss/app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/admin.js" afterPath="$PROJECT_DIR$/js/admin.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,12 +18,15 @@
       <file leaf-file-name="index.html.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/index.html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="106" column="38" lean-forward="false" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
+            <state relative-caret-position="119">
+              <caret line="168" column="53" lean-forward="false" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="53" />
               <folding>
+                <element signature="n#section#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
                 <element signature="n#table#0;n#section#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
-                <marker date="1495577984720" expanded="true" signature="1548:1653" ph="SELECT order... orders" />
-                <marker date="1495577984720" expanded="true" signature="1740:1802" ph="SELECT order... orders" />
+                <element signature="n#section#1;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
+                <marker date="1495580301378" expanded="true" signature="1847:1952" ph="SELECT order... orders" />
+                <marker date="1495580301378" expanded="true" signature="2039:2108" ph="SELECT order... orders" />
+                <marker date="1495580301378" expanded="true" signature="2209:2274" ph="SELECT custo... customers" />
               </folding>
             </state>
           </provider>
@@ -36,8 +35,8 @@
       <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="323">
+              <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -349,12 +348,12 @@
       <workItem from="1495296025683" duration="2823000" />
       <workItem from="1495488561730" duration="5901000" />
       <workItem from="1495524824380" duration="2625000" />
-      <workItem from="1495539744557" duration="14287000" />
+      <workItem from="1495539744557" duration="16588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78223000" />
+    <option name="totallyTimeSpent" value="80524000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -363,7 +362,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15895061" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15895061" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -841,20 +840,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="106" column="38" lean-forward="false" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="168" column="53" lean-forward="false" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="53" />
           <folding>
+            <element signature="n#section#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
             <element signature="n#table#0;n#section#0;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
-            <marker date="1495577984720" expanded="true" signature="1548:1653" ph="SELECT order... orders" />
-            <marker date="1495577984720" expanded="true" signature="1740:1802" ph="SELECT order... orders" />
+            <element signature="n#section#1;n#div#1;n#div#0;n#main#0;n#!!top" expanded="false" />
+            <marker date="1495580301378" expanded="true" signature="1847:1952" ph="SELECT order... orders" />
+            <marker date="1495580301378" expanded="true" signature="2039:2108" ph="SELECT order... orders" />
+            <marker date="1495580301378" expanded="true" signature="2209:2274" ph="SELECT custo... customers" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="323">
+          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

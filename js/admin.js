@@ -3,12 +3,21 @@
  */
 $allOrders = $('#btnOrders');
 $tabAllOrders = $('#orders');
+
 $myOrders = $('#btnMyOrders');
-$tabMyOrders = $('#myOrders')
+$tabMyOrders = $('#myOrders');
+
+$customers = $('#btnCustomers');
+$tabCustomers = $('#customers')
 
 $allOrders.click(function () {
     $tabAllOrders.toggleClass('hide');
 });
+
 $myOrders.click(function () {
     $tabMyOrders.toggleClass('hide');
+});
+
+$customers.click(function () {
+    $tabCustomers.toggleClass('hide');
 });

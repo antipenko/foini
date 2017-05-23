@@ -26,20 +26,27 @@
                             <li><a href="#" id="btnMyOrders">Мои заказы</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#" class="menu-item__link">Клиенты</a></li>
+                    <li class="menu-item"><a href="#" class="menu-item__link" id="btnCustomers">Клиенты</a></li>
                     <li class="menu-item"><a href="#" class="menu-item__link">Калькулятор</a></li>
                     <li class="menu-item"><a href="#" class="menu-item__link">Статистика</a></li>
                 </ul>
             </nav>
         </div>
         <div class="columns medium-10 main">
+            <!--Владух, этоужаснейший говнокод.
+                в Try у тебя несколько переменных с различными запросами. И получение результатов этих запросов.
+                Дальше идут циклы foreach в которых ты создаешь массивы с результатами каждого запроса.
+            -->
             <?php
             try {
                 $allOrders = 'SELECT orders.idOrder, description, users.name FROM orders  INNER JOIN users ON users.id = orders.idAdmin';
                 $result = $pdo->query($allOrders);
 
-                $ordersAdmin = 'SELECT orders.idOrder, description FROM orders WHERE idAdmin=1';
+                $ordersAdmin = 'SELECT orders.idOrder, description, price FROM orders WHERE idAdmin=1';
                 $resultOrdersAdmin = $pdo->query($ordersAdmin);
+
+                $allCustomers = 'SELECT customers.idCustom, nameCustom, phoneCustom FROM customers ';
+                $resultAllCustomers = $pdo->query($allCustomers);
 
             } catch (PDOException $e) {
                 $error = 'Ошибка вывода контактов: ' . $e->getMessage();
@@ -58,12 +65,27 @@
             foreach ($resultOrdersAdmin as $row1) {
                 $myOrders[] = array(
                     'id' => $row1['idOrder'],
-                    'name' => $row1['description'],
-                    'login' => $row1['name']
+                    'description' => $row1['description'],
+                    'price' => $row1['price']
+                );
+            }
+
+            foreach ($resultAllCustomers as $row2) {
+                $customers[] = array(
+                    'id' => $row2['idCustom'],
+                    'nameCustom' => $row2['nameCustom'],
+                    'phoneCustom' => $row2['phoneCustom']
                 );
             }
 
             ?>
+            <!--
+                тут ты создаешь section>table для каждой таблицы с результатами твоих запросов
+                и в цикле выводишь как то строки.
+                Таблицы по умолчанию скрыты. при нажатии на соответствующий пункт в меню (на нем есть id)
+                у тебя отображается таблица (тоже с id - id-шники связаны по названию). Это реализовано в файле admin.js
+                СДАЙ КУРСАЧ ТАК (ЛИШЬ БЫ РАБОТАЛО), НО ПОЗЖЕ ОБЯЗАТЕЛЬНО ПЕРЕДЕЛАЙ!!!!
+            -->
             <section class="table hide" id="orders">
                 <table class='table-contacts' border=1>
                     <tr>
@@ -105,32 +127,32 @@
                 </table>
             </section>
             <section class="table hide" id="myOrders">
-            <table class='table-contacts' border=1>
-                <tr>
-                    <td>id</td>
-                    <td>description</td>
-                    <td>price</td>
-                    <!--  <td>Birthday</td>
-                    <td>Phone</td> -->
-                </tr>
-                <?php $count = 0; ?>
-                <?php foreach ($myOrders as $myOrder): ?>
-
+                <table class='table-contacts' border=1>
                     <tr>
-                        <td><?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td>
-                            <?php $count = $count + 1; ?>
-                            <a href="#openModal" class="success button round buttonModale"
-                               id="<?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?>"
-                               data-open="modal-<?php echo "$count"; ?> ">+</a>
-                            <span class="id_button" id="id"
-                                  style="display: none;">   <?php // echo htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8'); ?>  </span>
-                            <?php echo htmlspecialchars($myOrder['name'], ENT_QUOTES, 'UTF-8'); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($myOrder['login'], ENT_QUOTES, 'UTF-8'); ?>
-                        </td>
-                        <!--  <td>
+                        <td>id</td>
+                        <td>Описание заказа</td>
+                        <td>Цена</td>
+                        <!--  <td>Birthday</td>
+                        <td>Phone</td> -->
+                    </tr>
+                    <?php $count = 0; ?>
+                    <?php foreach ($myOrders as $myOrder): ?>
+
+                        <tr>
+                            <td><?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td>
+                                <?php $count = $count + 1; ?>
+                                <a href="#openModal" class="success button round buttonModale"
+                                   id="<?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?>"
+                                   data-open="modal-<?php echo "$count"; ?> ">+</a>
+                                <span class="id_button" id="id"
+                                      style="display: none;">   <?php // echo htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8'); ?>  </span>
+                                <?php echo htmlspecialchars($myOrder['description'], ENT_QUOTES, 'UTF-8'); ?>
+                            </td>
+                            <td>
+                                <?php echo htmlspecialchars($myOrder['price'], ENT_QUOTES, 'UTF-8'); ?>
+                            </td>
+                            <!--  <td>
 
                 <?php //$date = htmlspecialchars($contact['birthday'], ENT_QUOTES, 'UTF-8'); ?>
                 <time datetime="<?php //echo $date; ?>"> <?php //echo $date; ?> </time>
@@ -139,10 +161,40 @@
                 <?php //$tel = htmlspecialchars($contact['phonenumber'], ENT_QUOTES, 'UTF-8'); ?>
                 <a href="tel:+ <?php //echo $tel ?> "> <?php //echo $tel?> </a>
               </td>-->
-                    </tr>
+                        </tr>
 
-                <?php endforeach; ?>
-            </table>
+                    <?php endforeach; ?>
+                </table>
+            </section>
+            <section class="table hide" id="customers">
+                <table class='table-contacts' border=1>
+                    <tr>
+                        <td>id</td>
+                        <td>Имя/Название</td>
+                        <td>Номер телефона</td>
+                    </tr>
+                    <?php $count = 0; ?>
+                    <?php foreach ($customers as $custom): ?>
+
+                        <tr>
+                            <td><?php echo htmlspecialchars($custom['id'], ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td>
+                                <?php $count = $count + 1; ?>
+                                <a href="#openModal" class="success button round buttonModale"
+                                   id="<?php echo htmlspecialchars($custom['nameCustom'], ENT_QUOTES, 'UTF-8'); ?>"
+                                   data-open="modal-<?php echo "$count"; ?> ">+</a>
+                                <span class="id_button" id="id"
+                                      style="display: none;">   <?php // echo htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8'); ?>  </span>
+                                <?php echo htmlspecialchars($custom['nameCustom'], ENT_QUOTES, 'UTF-8'); ?>
+                            </td>
+                            <td>
+                                <?php $tel = htmlspecialchars($custom['phoneCustom'], ENT_QUOTES, 'UTF-8'); ?>
+                                <a href="tel:+ <?php echo $tel ?> "> <?php echo $tel?> </a>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+                </table>
             </section>
         </div>
     </div>
