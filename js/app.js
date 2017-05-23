@@ -82,4 +82,5 @@ $work.click(function(){
 	$modal = "<div class='modal'> </div>"
 	// $myModal = $('body').append($modal);
 	
-})
+});
+
