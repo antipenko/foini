@@ -593,6 +593,7 @@ input[type='text'], input[type='email'], textarea {
 .admin .row{
 	padding: 0;
 	max-width: 100%;
+	height:100vh;
 }
 .main{
 	height: 100%;
@@ -640,4 +641,13 @@ input[type='text'], input[type='email'], textarea {
 
 .table{
 
+}
+.active{
+	border-bottom: 2px solid red;
+}
+
+.order-new{
+	input{
+		color:#0a0a0a;
+	}
 }

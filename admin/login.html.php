@@ -27,6 +27,7 @@
             print "success=1";
             $_SESSION['logged_user'] = $user;
             $userName= $_SESSION['logged_user'];
+
             echo "<div style='color:red;'>вы авторизованы $user <a href='.'>сюда</a></div>";
         } else {
             print "success=0";

@@ -24,6 +24,7 @@
                         <ul class="dropdown">
                             <li><a href="#" id="btnOrders">Все заказы</a></li>
                             <li><a href="#" id="btnMyOrders">Мои заказы</a></li>
+                            <li><a href="#" id="btnNewOrders">Новый заказ</a></li>
                         </ul>
                     </li>
                     <li class="menu-item"><a href="#" class="menu-item__link" id="btnCustomers">Клиенты</a></li>
@@ -91,9 +92,7 @@
                     <tr>
                         <td>id</td>
                         <td>description</td>
-                        <td>price</td>
-                        <!--  <td>Birthday</td>
-                        <td>Phone</td> -->
+                        <td>Администратор</td>
                     </tr>
                     <?php $count = 0; ?>
                     <?php foreach ($contacts as $contact): ?>
@@ -112,29 +111,20 @@
                             <td>
                                 <?php echo htmlspecialchars($contact['login'], ENT_QUOTES, 'UTF-8'); ?>
                             </td>
-                            <!--  <td>
-
-                <?php //$date = htmlspecialchars($contact['birthday'], ENT_QUOTES, 'UTF-8'); ?>
-                <time datetime="<?php //echo $date; ?>"> <?php //echo $date; ?> </time>
-              </td>
-              <td>
-                <?php //$tel = htmlspecialchars($contact['phonenumber'], ENT_QUOTES, 'UTF-8'); ?>
-                <a href="tel:+ <?php //echo $tel ?> "> <?php //echo $tel?> </a>
-              </td>-->
                         </tr>
 
                     <?php endforeach; ?>
                 </table>
             </section>
             <section class="table hide" id="myOrders">
-                <table class='table-contacts' border=1>
-                    <tr>
-                        <td>id</td>
-                        <td>Описание заказа</td>
-                        <td>Цена</td>
-                        <!--  <td>Birthday</td>
-                        <td>Phone</td> -->
-                    </tr>
+                <table class='table-contacts' border=1 id="grid">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th data-type="string">Описание заказа</th>
+                            <th data-type="number">Цена</th>
+                        </tr>
+                    </thead>
                     <?php $count = 0; ?>
                     <?php foreach ($myOrders as $myOrder): ?>
 
@@ -152,27 +142,21 @@
                             <td>
                                 <?php echo htmlspecialchars($myOrder['price'], ENT_QUOTES, 'UTF-8'); ?>
                             </td>
-                            <!--  <td>
 
-                <?php //$date = htmlspecialchars($contact['birthday'], ENT_QUOTES, 'UTF-8'); ?>
-                <time datetime="<?php //echo $date; ?>"> <?php //echo $date; ?> </time>
-              </td>
-              <td>
-                <?php //$tel = htmlspecialchars($contact['phonenumber'], ENT_QUOTES, 'UTF-8'); ?>
-                <a href="tel:+ <?php //echo $tel ?> "> <?php //echo $tel?> </a>
-              </td>-->
                         </tr>
 
                     <?php endforeach; ?>
                 </table>
             </section>
             <section class="table hide" id="customers">
-                <table class='table-contacts' border=1>
-                    <tr>
-                        <td>id</td>
-                        <td>Имя/Название</td>
-                        <td>Номер телефона</td>
-                    </tr>
+                <table class='table-contacts' border=1 id="grid">
+                    <thead>
+                        <tr>
+                            <th data-type="number">id</th>
+                            <th data-type="string">Имя/Название</th>
+                            <th>Номер телефона</th>
+                        </tr>
+                    </thead>
                     <?php $count = 0; ?>
                     <?php foreach ($customers as $custom): ?>
 
@@ -189,12 +173,30 @@
                             </td>
                             <td>
                                 <?php $tel = htmlspecialchars($custom['phoneCustom'], ENT_QUOTES, 'UTF-8'); ?>
-                                <a href="tel:+ <?php echo $tel ?> "> <?php echo $tel?> </a>
+                                <a href="tel:+ <?php echo $tel ?> "> <?php echo $tel ?> </a>
                             </td>
                         </tr>
 
                     <?php endforeach; ?>
                 </table>
+            </section>
+            <section id="newOrder" class="hide">
+                <form action="newOrder.php" method="post" class="order-new">
+                    <select name="customer" id="">
+                        <option value="">Новый заказчик</option>
+                        <option value="1">АнтиКафе</option>
+                        <option value="2">ХАИ Кафедра 302</option>
+                    </select>
+
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="text" name="idAdmin" value="<?php echo $userName->id; ?>">
+                    <label for="count">Количество</label>
+                    <input type="number" name="count" value="10">
+                    <input type="text" name="typePaper" placeholder="Тип Бумаги">
+                    <textarea name="desc" id="" cols="30" rows="10" style="color:#000;">Описание</textarea>
+                    <input type="text" value="0" placeholder="Стоимость" name="price">
+                    <input type="submit" name="new_order" value="Добавить" class="button">
+                </form>
             </section>
         </div>
     </div>
