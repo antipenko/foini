@@ -3653,8 +3653,18 @@ section {
     top: 0;
     right: 0; }
 
+.table th {
+  background: transparent; }
+  .table th:hover {
+    opacity: .8;
+    cursor: pointer; }
+
 .active {
   border-bottom: 2px solid red; }
 
-.order-new input {
+.order-new input, .customer-new input {
   color: #0a0a0a; }
+.order-new .button{
+  border:2px solid #fff;
+  background-color: #52cfeb;
+}

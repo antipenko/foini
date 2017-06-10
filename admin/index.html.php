@@ -27,7 +27,12 @@
                             <li><a href="#" id="btnNewOrders">Новый заказ</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#" class="menu-item__link" id="btnCustomers">Клиенты</a></li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-item__link" id="btnCustomers">Клиенты</a>
+                        <ul class="dropdown">
+                            <li><a href="#" id="btnNewCustomer">Новый клиент</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-item"><a href="#" class="menu-item__link">Калькулятор</a></li>
                     <li class="menu-item"><a href="#" class="menu-item__link">Статистика</a></li>
                 </ul>
@@ -88,12 +93,14 @@
                 СДАЙ КУРСАЧ ТАК (ЛИШЬ БЫ РАБОТАЛО), НО ПОЗЖЕ ОБЯЗАТЕЛЬНО ПЕРЕДЕЛАЙ!!!!
             -->
             <section class="table hide" id="orders">
-                <table class='table-contacts' border=1>
+                <table class='table-contacts' border=1 id="grid">
+                    <thead>
                     <tr>
-                        <td>id</td>
-                        <td>description</td>
-                        <td>Администратор</td>
+                        <th data-type="number">id</th>
+                        <th data-type="string">description</th>
+                        <th data-type="string">Администратор</th>
                     </tr>
+                    </thead>
                     <?php $count = 0; ?>
                     <?php foreach ($contacts as $contact): ?>
 
@@ -101,7 +108,7 @@
                             <td><?php echo htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <?php $count = $count + 1; ?>
-                                <a href="#openModal" class="success button round buttonModale"
+                                <a href="order.php?id= <?php echo $contact['id'] ?>" class="success button round buttonModale"
                                    id="<?php echo htmlspecialchars($contact['id'], ENT_QUOTES, 'UTF-8'); ?>"
                                    data-open="modal-<?php echo "$count"; ?> ">+</a>
                                 <span class="id_button" id="id"
@@ -119,11 +126,11 @@
             <section class="table hide" id="myOrders">
                 <table class='table-contacts' border=1 id="grid">
                     <thead>
-                        <tr>
-                            <th>id</th>
-                            <th data-type="string">Описание заказа</th>
-                            <th data-type="number">Цена</th>
-                        </tr>
+                    <tr>
+                        <th data-type="number">id</th>
+                        <th data-type="string">Описание заказа</th>
+                        <th data-type="number">Цена</th>
+                    </tr>
                     </thead>
                     <?php $count = 0; ?>
                     <?php foreach ($myOrders as $myOrder): ?>
@@ -132,7 +139,8 @@
                             <td><?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <?php $count = $count + 1; ?>
-                                <a href="#openModal" class="success button round buttonModale"
+                                <a href="order.php?id= <?php echo $myOrder['id'] ?> "
+                                   class="success button round buttonModale"
                                    id="<?php echo htmlspecialchars($myOrder['id'], ENT_QUOTES, 'UTF-8'); ?>"
                                    data-open="modal-<?php echo "$count"; ?> ">+</a>
                                 <span class="id_button" id="id"
@@ -151,11 +159,11 @@
             <section class="table hide" id="customers">
                 <table class='table-contacts' border=1 id="grid">
                     <thead>
-                        <tr>
-                            <th data-type="number">id</th>
-                            <th data-type="string">Имя/Название</th>
-                            <th>Номер телефона</th>
-                        </tr>
+                    <tr>
+                        <th data-type="number">id</th>
+                        <th data-type="string">Имя/Название</th>
+                        <th>Номер телефона</th>
+                    </tr>
                     </thead>
                     <?php $count = 0; ?>
                     <?php foreach ($customers as $custom): ?>
@@ -181,23 +189,39 @@
                 </table>
             </section>
             <section id="newOrder" class="hide">
-                <form action="newOrder.php" method="post" class="order-new">
+                <form action="newPost.php" method="post" class="order-new">
                     <select name="customer" id="">
-                        <option value="">Новый заказчик</option>
-                        <option value="1">АнтиКафе</option>
-                        <option value="2">ХАИ Кафедра 302</option>
+                        <?php foreach ($customers as $custom) { ?>
+                            <option value=" <?php echo $custom['id']; ?> ">
+                                <?php echo $custom['nameCustom']; ?>
+                            </option>
+                        <?php } ?>
+
                     </select>
 
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="text" name="idAdmin" value="<?php echo $userName->id; ?>">
+                    <input type="text" class="hide" name="idAdmin" value="<?php echo $userName->id; ?>">
                     <label for="count">Количество</label>
                     <input type="number" name="count" value="10">
                     <input type="text" name="typePaper" placeholder="Тип Бумаги">
                     <textarea name="desc" id="" cols="30" rows="10" style="color:#000;">Описание</textarea>
-                    <input type="text" value="0" placeholder="Стоимость" name="price">
+                    <input type="text" value="" placeholder="Стоимость" name="price">
                     <input type="submit" name="new_order" value="Добавить" class="button">
                 </form>
             </section>
+
+            <section id="newCustomer" class="hide">
+                <form action="newCustom.php" method="post" class="customer-new">
+                    <label for="nameCustomer">Имя/Название</label>
+                    <input type="text" name="nameCustomer" value="">
+                    <label for="phoneCustomer">Номер телефона</label>
+                    <input type="text" name="phoneCustomer" value="">
+                    <textarea name="descCustomer" id="" cols="30" rows="10" style="color:#000;"
+                              placeholder="Описание.."></textarea>
+                    <input type="submit" name="new_customer" value="Добавить" class="button">
+                </form>
+            </section>
+
         </div>
     </div>
 </main>

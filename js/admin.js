@@ -13,15 +13,20 @@ $tabCustomers = $('#customers');
 $newOrder = $('#btnNewOrders');
 $formNewOrder = $('#newOrder');
 
+$newCustomer = $('#btnNewCustomer');
+$formNewCustomer = $('#newCustomer');
+
 function hideTable() {
     $tabAllOrders.addClass('hide');
     $tabMyOrders.addClass('hide');
     $tabCustomers.addClass('hide');
     $formNewOrder.addClass('hide');
+    $formNewCustomer.addClass('hide');
     $allOrders.removeClass('active');
     $myOrders.removeClass('active');
     $customers.removeClass('active');
     $newOrder.removeClass('active');
+    $newCustomer.removeClass('active');
 }
 $allOrders.click(function () {
     hideTable();
@@ -45,6 +50,12 @@ $newOrder.click(function () {
     hideTable();
     $formNewOrder.toggleClass('hide');
     $newOrder.toggleClass('active');
+});
+
+$newCustomer.click(function () {
+    hideTable();
+    $formNewCustomer.toggleClass('hide');
+    $newCustomer.toggleClass('active');
 });
 
 var grid = document.getElementById('grid');

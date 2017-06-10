@@ -639,14 +639,19 @@ input[type='text'], input[type='email'], textarea {
 	}
 }
 
-.table{
-
+.table th{
+	background: transparent;
+	&:hover{
+		opacity: .8;
+		cursor: pointer;
+	}
 }
+
 .active{
 	border-bottom: 2px solid red;
 }
 
-.order-new{
+.order-new, .customer-new{
 	input{
 		color:#0a0a0a;
 	}

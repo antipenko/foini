@@ -13,7 +13,7 @@ if (isset($_SESSION['logged_user'])):
     include 'index.html.php';
 else : ?>
     <script>
-location.href='http://foini/admpanel/login.html.php';
+location.href='http://foini/adminpanel/login.html.php';
     </script>
 <?php
 endif;

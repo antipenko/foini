@@ -29,6 +29,9 @@
             $userName= $_SESSION['logged_user'];
 
             echo "<div style='color:red;'>вы авторизованы $user <a href='.'>сюда</a></div>";
+            echo "<script>
+            location.href='http://foini/admin/index.php';
+            </script>";
         } else {
             print "success=0";
         }

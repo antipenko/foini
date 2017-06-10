@@ -24,7 +24,7 @@
             if ( $data['password'] == $user->password)
             {
                 $_SESSION['logged_user'] = $user;
-                $userName= $_SESSION['logged_user']->login;
+                $userName= $_SESSION['logged_user'];
                 echo "<div> Вы усешно авторизованы</div>";
             } else
             {
